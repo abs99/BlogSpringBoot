@@ -1,4 +1,4 @@
-package entities;
+package blog.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +21,7 @@ public class User {
  
  @Id
  @GeneratedValue(strategy = GenerationType.AUTO)
- public String id;
+ public Long id;
  public String username;
  public String email;
  public String password;

@@ -1,6 +1,4 @@
-package payloads;
-
-import com.fasterxml.jackson.core.sym.Name;
+package blog.payloads;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +10,7 @@ import lombok.Setter;
 @Getter
 public class UserDto {
    
-	 private String id;
+	 private Long id;
 	 private String username;
 	 private String email;
 	 private String password;
