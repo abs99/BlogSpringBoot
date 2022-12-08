@@ -1,6 +1,7 @@
 package blog.entities;
 
-import java.sql.Date;
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,8 +13,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "posts")
+@Getter
+@Setter
 public class Post {
 	
 	@Id
@@ -25,6 +31,9 @@ public class Post {
 	
 	@Column(length = 1000)
 	private String content;
+	
+	@Column
+	private String image;
 	
 	private Date addedDate;
 	

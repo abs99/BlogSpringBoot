@@ -1,5 +1,7 @@
 package blog.payloads;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,5 +16,6 @@ public class CategoryDto {
 	public  String categoryTitle;
 	
 	public String categoryDescription;
+	
 
 }

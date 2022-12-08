@@ -36,14 +36,14 @@ public class UserController {
 	}
 	
 	@PutMapping("/{userId}")
-	public ResponseEntity<UserDto> updateUser(@RequestBody UserDto userDto, @PathVariable("userId") Long uid ) {
+	public ResponseEntity<UserDto> updateUser(@RequestBody UserDto userDto, @PathVariable("userId") Integer uid ) {
 		
 		UserDto updatedUserDto = userService.updateUser(userDto,uid);		
 		return new ResponseEntity<>(updatedUserDto, HttpStatus.OK);
 	}
 	
 	@GetMapping("/{userId}")
-	public ResponseEntity<UserDto> getUser(@PathVariable("userId") Long uid ) {
+	public ResponseEntity<UserDto> getUser(@PathVariable("userId") Integer uid ) {
 		
 		UserDto userDto = userService.getUserById(uid);		
 		return new ResponseEntity<>(userDto, HttpStatus.OK);
@@ -57,7 +57,7 @@ public class UserController {
 	}
 	
 	@DeleteMapping("/{userId}")
-	public ResponseEntity<ApiResponse> deleteUser (@PathVariable("userId") Long uid ) {
+	public ResponseEntity<ApiResponse> deleteUser (@PathVariable("userId") Integer uid ) {
 		
 	     userService.deleteUser(uid);		
 		return new ResponseEntity<>(new ApiResponse("User Deleted Successfully", true), HttpStatus.OK);

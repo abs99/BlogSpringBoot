@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
 		
 	}
 
-	public UserDto updateUser(UserDto userdto, Long userId) {
+	public UserDto updateUser(UserDto userdto, Integer userId) {
 		
 		User user = userRepo.findById(userId).orElseThrow( ()-> new ResourceNotFoundException("User", "id", String.valueOf(userId)));
 		user.setEmail(userdto.getEmail());
@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
 		return modelMapper.map(user,UserDto.class);
 	}
 
-	public UserDto getUserById(Long userId) {
+	public UserDto getUserById(Integer userId) {
 		
 		User user = userRepo.findById(userId).orElseThrow( ()-> new ResourceNotFoundException("User", "id", String.valueOf(userId)));
 		
@@ -58,7 +58,7 @@ public class UserServiceImpl implements UserService {
 		return userDtoList;
 	}
 
-	public void deleteUser(Long userId) {
+	public void deleteUser(Integer userId) {
 		
 		userRepo.deleteById(userId);
 		return;

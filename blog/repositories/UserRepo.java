@@ -9,7 +9,7 @@ import blog.entities.User;
 import blog.payloads.UserDto;
 
 @Repository
-public interface UserRepo extends JpaRepository<User, Long> {
+public interface UserRepo extends JpaRepository<User, Integer> {
 
 //	UserDto createUser(UserDto user);
 //	UserDto updateUser(UserDto user);
